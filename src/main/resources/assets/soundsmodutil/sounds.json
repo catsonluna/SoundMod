@@ -22,10 +22,11 @@
       "sounds": [
         "soundsmodutil:quack"
       ]
-    },"gotcha": {
-    "category": "player",
-    "sounds": [
-      "soundsmodutil:gotcha"
+    },
+   "gotcha": {
+     "category": "player",
+     "sounds": [
+       "soundsmodutil:gotcha"
     ]
   }
 }

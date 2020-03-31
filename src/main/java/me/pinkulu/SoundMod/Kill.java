@@ -4,24 +4,29 @@ import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.ClientChatReceivedEvent;
 
 public class Kill {
-    public static boolean boomerOn = true;
-    public static boolean oofOn = false;
-    public static boolean bruhOn = false;
-    public static boolean quackOn = false;
-    public static boolean gotchaOn = false;
+    public static boolean boomerKill = true;
+    public static boolean oofKill = false;
+    public static boolean bruhKill = false;
+    public static boolean quackKill = false;
+    public static boolean gotchaKill = false;
+
     public void ChatReceivedEvent(ClientChatReceivedEvent event) {
-        if (event.message.getUnformattedText().toLowerCase().startsWith("You died!")) {
-            if(boomerOn){
-                Minecraft.getMinecraft().thePlayer.playSound(RegisterSounds.boomer.toString(), 1f, 1f);
-            }else if(oofOn){
-                Minecraft.getMinecraft().thePlayer.playSound(RegisterSounds.oof.toString(), 1f, 1f);
-            }else if(bruhOn){
-                Minecraft.getMinecraft().thePlayer.playSound(RegisterSounds.bruh.toString(), 1f, 1f);
-            }else if(quackOn){
-                Minecraft.getMinecraft().thePlayer.playSound(RegisterSounds.quack.toString(), 1f, 1f);
-            }else if(gotchaOn){
-                Minecraft.getMinecraft().thePlayer.playSound(RegisterSounds.gotcha.toString(), 1f, 1f);
+        String msg = event.message.getUnformattedText();
+        if (msg.startsWith("+") && msg.contains("Kill") && msg.contains("coins")) {
+            if(boomerKill){
+                Minecraft.getMinecraft().thePlayer.playSound(String.valueOf(RegisterSounds.boomer), 1f, 1f);
+            }else if(oofKill){
+                Minecraft.getMinecraft().thePlayer.playSound(String.valueOf(RegisterSounds.oof), 1f, 1f);
+            }else if(bruhKill){
+                Minecraft.getMinecraft().thePlayer.playSound(String.valueOf(RegisterSounds.bruh), 1f, 1f);
+            }else if(quackKill){
+                Minecraft.getMinecraft().thePlayer.playSound(String.valueOf(RegisterSounds.quack), 1f, 1f);
+            }else if(gotchaKill){
+                Minecraft.getMinecraft().thePlayer.playSound(String.valueOf(RegisterSounds.gotcha), 1f, 1f);
             }
         }
     }
 }
+
+
+
