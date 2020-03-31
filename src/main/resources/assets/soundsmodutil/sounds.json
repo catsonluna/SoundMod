@@ -1,0 +1,31 @@
+{
+    "boomer": {
+      "category": "player",
+      "sounds": [
+        "soundsmodutil:boomer"
+      ]
+    },
+    "oof": {
+      "category": "player",
+      "sounds": [
+        "soundsmodutil:oof"
+      ]
+    },
+    "bruh": {
+      "category": "player",
+      "sounds": [
+        "soundsmodutil:bruh"
+      ]
+    },
+    "quack": {
+      "category": "player",
+      "sounds": [
+        "soundsmodutil:quack"
+      ]
+    },"gotcha": {
+    "category": "player",
+    "sounds": [
+      "soundsmodutil:gotcha"
+    ]
+  }
+}
