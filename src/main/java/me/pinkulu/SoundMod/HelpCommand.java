@@ -29,13 +29,13 @@ public class HelpCommand extends CommandBase {
         ChatStyle style = new ChatStyle();
         //hoverable text
         style.setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ChatComponentText(Util.replace(
-                " &3Available Kill massages: " +
+                " &3Available Kill sounds: " +
                         "\n &" + (SoundPlayer.boomerKill ? "a" : "c")+ "boomer " +
                         "&" + (SoundPlayer.oofKill ? "a" : "c")+ "oof "+
                         "&" + (SoundPlayer.gotchaKill ? "a" : "c")+"gotcha "+
                         "&" + (SoundPlayer.quackKill ? "a" : "c")+"quack "+
                         "&" + (SoundPlayer.bruhKill ? "a" : "c") +"bruh"+
-                        "\n &3Available death massages: " +
+                        "\n &3Available Death sounds: " +
                         "\n &"+(SoundPlayer.boomerDeath ? "a" : "c")+ "boomer " +
                         "&" + (SoundPlayer.oofDeath ? "a" : "c")+ "oof "+
                         "&" + (SoundPlayer.quackDeath ? "a" : "c")+"quack "+

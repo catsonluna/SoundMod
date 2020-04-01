@@ -1,14 +1,12 @@
 package me.pinkulu.SoundMod;
 
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.common.config.Property;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
@@ -34,8 +32,8 @@ public class Sounds {
         ClientCommandHandler.instance.registerCommand(new HelpCommand());
         ClientCommandHandler.instance.registerCommand(new KillToggleCommand());
         ClientCommandHandler.instance.registerCommand(new DeathToggleCommand());
+        ClientCommandHandler.instance.registerCommand(new NickCommand());
         loadConfig();
-
 
     }
 
@@ -57,21 +55,32 @@ public class Sounds {
     private void loadConfig() {
         try {
             File file = new File("SoundsMod", "config.json");
-            if (!file.exists()) {
-                file.createNewFile();
-            }
-            readJson(file);
+            if(file.exists())
+                readJson(file);
         }
         catch (Throwable e) {
             e.printStackTrace();
         }
     }
-    private void readJson(File file) throws Throwable{
+    public void readJson(File file) throws Throwable{
         JsonParser parser = new JsonParser();
         JsonObject json  = parser.parse(new FileReader(file)).getAsJsonObject();
+        json = json.getAsJsonObject("Sounds");
+
+        SoundPlayer.oofKill = json.get("oofKill").getAsBoolean();
+        SoundPlayer.oofDeath = json.get("oofDeath").getAsBoolean();
+
+        SoundPlayer.boomerKill = json.get("boomerKill").getAsBoolean();
+        SoundPlayer.boomerDeath = json.get("boomerDeath").getAsBoolean();
+
+        SoundPlayer.bruhKill = json.get("bruhKill").getAsBoolean();
+        SoundPlayer.bruhDeath = json.get("bruhDeath").getAsBoolean();
+
+        SoundPlayer.quackKill = json.get("quackKill").getAsBoolean();
+        SoundPlayer.quackDeath = json.get("quackDeath").getAsBoolean();
+
+        SoundPlayer.gotchaKill = json.get("gotchaKill").getAsBoolean();
     }
-
-
     public static void writeJson(JsonWriter writer) throws IOException {
         writer.setIndent(" "); // this enabled pretty print
         writer.beginObject();

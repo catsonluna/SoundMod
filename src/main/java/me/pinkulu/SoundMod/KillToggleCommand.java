@@ -37,7 +37,7 @@ public class KillToggleCommand extends CommandBase {
             SoundPlayer.quackKill= false;
             SoundPlayer.gotchaKill = false;
             SoundPlayer.oofKill = false;
-            Minecraft.getMinecraft().thePlayer.playSound(SoundPlayer.boomer.toString(), 1.0f, 1.0f);
+            Minecraft.getMinecraft().thePlayer.playSound(SoundPlayer.boomer.toString(), 0.5f, 1.0f);
                 Sounds.saveConfig();
 
         }else if(args[0].equals("bruh")){
@@ -47,7 +47,7 @@ public class KillToggleCommand extends CommandBase {
             SoundPlayer.quackKill= false;
             SoundPlayer.gotchaKill = false;
             SoundPlayer.oofKill = false;
-            Minecraft.getMinecraft().thePlayer.playSound(SoundPlayer.bruh.toString(), 1.0f, 1.0f);
+            Minecraft.getMinecraft().thePlayer.playSound(SoundPlayer.bruh.toString(), 3.0f, 1.0f);
                 Sounds.saveConfig();
 
         }else if (args[0].equals("quack")) {
@@ -57,7 +57,7 @@ public class KillToggleCommand extends CommandBase {
             SoundPlayer.quackKill= true;
             SoundPlayer.gotchaKill = false;
             SoundPlayer.oofKill = false;
-            Minecraft.getMinecraft().thePlayer.playSound(SoundPlayer.quack.toString(), 1.0f, 1.0f);
+            Minecraft.getMinecraft().thePlayer.playSound(SoundPlayer.quack.toString(), 4.0f, 1.0f);
                 Sounds.saveConfig();
 
         }else if (args[0].equals("gotcha")) {
@@ -67,7 +67,7 @@ public class KillToggleCommand extends CommandBase {
             SoundPlayer.quackKill= false;
             SoundPlayer.gotchaKill = true;
             SoundPlayer.oofKill = false;
-            Minecraft.getMinecraft().thePlayer.playSound(SoundPlayer.gotcha.toString(), 1.0f, 1.0f);
+            Minecraft.getMinecraft().thePlayer.playSound(SoundPlayer.gotcha.toString(), 3.0f, 1.0f);
                 Sounds.saveConfig();
 
         }else if (args[0].equals("oof")) {
@@ -77,7 +77,7 @@ public class KillToggleCommand extends CommandBase {
             SoundPlayer.quackKill= false;
             SoundPlayer.gotchaKill = false;
             SoundPlayer.oofKill = true;
-            Minecraft.getMinecraft().thePlayer.playSound(SoundPlayer.oof.toString(), 1.0f, 1.0f);
+            Minecraft.getMinecraft().thePlayer.playSound(SoundPlayer.oof.toString(), 3.0f, 1.0f);
                 Sounds.saveConfig();
         }
     }
