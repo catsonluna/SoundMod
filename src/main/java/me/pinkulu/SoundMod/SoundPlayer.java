@@ -15,13 +15,13 @@ public class SoundPlayer {
 
     public static boolean boomerDeath;
     public static boolean oofDeath;
-    public static boolean bruhDeath = true;
+    public static boolean bruhDeath;
     public static boolean quackDeath;
 
     public static boolean boomerKill;
     public static boolean oofKill;
     public static boolean bruhKill;
-    public static boolean quackKill = true;
+    public static boolean quackKill;
     public static boolean gotchaKill;
 
 
