@@ -1,8 +1,8 @@
 [
   {
-    "modid": "BoomerMod",
-    "name": "Boomer Mod",
-    "description": "Mod for when boomers kill you",
+    "modid": "soundsmod",
+    "name": "SoundsMod",
+    "description": "a sound when die or kill",
     "version": "${version}",
     "mcversion": "${mcversion}",
     "url": "",

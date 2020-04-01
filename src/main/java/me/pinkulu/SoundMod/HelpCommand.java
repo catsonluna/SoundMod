@@ -1,5 +1,8 @@
 package me.pinkulu.SoundMod;
 
+import me.pinkulu.SoundMod.SoundPlayer;
+import me.pinkulu.SoundMod.Sounds;
+import me.pinkulu.SoundMod.Util;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
@@ -27,16 +30,16 @@ public class HelpCommand extends CommandBase {
         //hoverable text
         style.setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ChatComponentText(Util.replace(
                 " &3Available Kill massages: " +
-                        "\n &" + (Kill.boomerKill ? "a" : "c")+ "boomer " +
-                        "&" + (Kill.oofKill ? "a" : "c")+ "oof "+
-                        "&" + (Kill.gotchaKill ? "a" : "c")+"gotcha "+
-                        "&" + (Kill.quackKill ? "a" : "c")+"quack "+
-                        "&" + (Kill.bruhKill ? "a" : "c") +"bruh"+
+                        "\n &" + (SoundPlayer.boomerKill ? "a" : "c")+ "boomer " +
+                        "&" + (SoundPlayer.oofKill ? "a" : "c")+ "oof "+
+                        "&" + (SoundPlayer.gotchaKill ? "a" : "c")+"gotcha "+
+                        "&" + (SoundPlayer.quackKill ? "a" : "c")+"quack "+
+                        "&" + (SoundPlayer.bruhKill ? "a" : "c") +"bruh"+
                         "\n &3Available death massages: " +
-                        "\n &" + (Death.boomerDeath ? "a" : "c")+ "boomer " +
-                        "&" + (Death.oofDeath ? "a" : "c")+ "oof "+
-                        "&" + (Death.quackDeath ? "a" : "c")+"quack "+
-                        "&" + (Death.bruhDeath ? "a" : "c") +"bruh"+
+                        "\n &"+(SoundPlayer.boomerDeath ? "a" : "c")+ "boomer " +
+                        "&" + (SoundPlayer.oofDeath ? "a" : "c")+ "oof "+
+                        "&" + (SoundPlayer.quackDeath ? "a" : "c")+"quack "+
+                        "&" + (SoundPlayer.bruhDeath ? "a" : "c") +"bruh"+
                         "\n &3Commands: " +
                         "\n &b/killsound + name or /deathsound + name" +
                         "\n &4More coming soon" +

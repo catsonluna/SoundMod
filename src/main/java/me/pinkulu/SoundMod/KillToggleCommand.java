@@ -1,10 +1,14 @@
 package me.pinkulu.SoundMod;
 
+import me.pinkulu.SoundMod.SoundPlayer;
+import me.pinkulu.SoundMod.Util;
 import net.minecraft.client.Minecraft;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentText;
+
+import java.io.IOException;
 
 public class KillToggleCommand extends CommandBase {
     @Override
@@ -25,34 +29,56 @@ public class KillToggleCommand extends CommandBase {
         }
         if (args[0].equals("help")) {
             sender.addChatMessage(new ChatComponentText(Util.replace("&2Correct command is" + getCommandUsage(sender))));
+
         } else if (args[0].equals("boomer")) {
-            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(Util.replace("&2Enabled boomer for &4Kill")));
-            Kill.boomerKill = true;
-            Kill.bruhKill = false;
-            Kill.quackKill= false;
-            Kill.gotchaKill = false;
-            Kill.oofKill = false;
+            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(Util.replace("&2Enabled &4boomer &2for &4Kill")));
+            SoundPlayer.boomerKill = true;
+            SoundPlayer.bruhKill = false;
+            SoundPlayer.quackKill= false;
+            SoundPlayer.gotchaKill = false;
+            SoundPlayer.oofKill = false;
+            Minecraft.getMinecraft().thePlayer.playSound(SoundPlayer.boomer.toString(), 1.0f, 1.0f);
+                Sounds.saveConfig();
+
+        }else if(args[0].equals("bruh")){
+            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(Util.replace("&2Enabled &4bruh &2for &4Kill")));
+            SoundPlayer.boomerKill = false;
+            SoundPlayer.bruhKill = true;
+            SoundPlayer.quackKill= false;
+            SoundPlayer.gotchaKill = false;
+            SoundPlayer.oofKill = false;
+            Minecraft.getMinecraft().thePlayer.playSound(SoundPlayer.bruh.toString(), 1.0f, 1.0f);
+                Sounds.saveConfig();
+
         }else if (args[0].equals("quack")) {
-            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(Util.replace("&2Enabled bruh for &4Kill")));
-            Kill.boomerKill = false;
-            Kill.bruhKill = false;
-            Kill.quackKill= true;
-            Kill.gotchaKill = false;
-            Kill.oofKill = false;
+            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(Util.replace("&2Enabled &4bquack &2for &4Kill")));
+            SoundPlayer.boomerKill = false;
+            SoundPlayer.bruhKill = false;
+            SoundPlayer.quackKill= true;
+            SoundPlayer.gotchaKill = false;
+            SoundPlayer.oofKill = false;
+            Minecraft.getMinecraft().thePlayer.playSound(SoundPlayer.quack.toString(), 1.0f, 1.0f);
+                Sounds.saveConfig();
+
         }else if (args[0].equals("gotcha")) {
-            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(Util.replace("&2Enabled gotcha for &4Kill")));
-            Kill.boomerKill = false;
-            Kill.bruhKill = false;
-            Kill.quackKill= false;
-            Kill.gotchaKill = true;
-            Kill.oofKill = false;
+            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(Util.replace("&2Enabled &4gotcha &2for &4Kill")));
+            SoundPlayer.boomerKill = false;
+            SoundPlayer.bruhKill = false;
+            SoundPlayer.quackKill= false;
+            SoundPlayer.gotchaKill = true;
+            SoundPlayer.oofKill = false;
+            Minecraft.getMinecraft().thePlayer.playSound(SoundPlayer.gotcha.toString(), 1.0f, 1.0f);
+                Sounds.saveConfig();
+
         }else if (args[0].equals("oof")) {
-            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(Util.replace("&2Enabled oof for &4Kill")));
-            Kill.boomerKill = false;
-            Kill.bruhKill = false;
-            Kill.quackKill= false;
-            Kill.gotchaKill = false;
-            Kill.oofKill = true;
+            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(Util.replace("&2Enabled &4oof &2for &4Kill")));
+            SoundPlayer.boomerKill = false;
+            SoundPlayer.bruhKill = false;
+            SoundPlayer.quackKill= false;
+            SoundPlayer.gotchaKill = false;
+            SoundPlayer.oofKill = true;
+            Minecraft.getMinecraft().thePlayer.playSound(SoundPlayer.oof.toString(), 1.0f, 1.0f);
+                Sounds.saveConfig();
         }
     }
 

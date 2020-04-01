@@ -3,30 +3,35 @@
       "category": "player",
       "sounds": [
         "soundsmodutil:boomer"
-      ]
+      ],
+      "stream": "false"
     },
     "oof": {
       "category": "player",
       "sounds": [
         "soundsmodutil:oof"
-      ]
+      ],
+      "stream": "false"
     },
     "bruh": {
       "category": "player",
       "sounds": [
         "soundsmodutil:bruh"
-      ]
+      ],
+      "stream": "false"
     },
     "quack": {
       "category": "player",
       "sounds": [
         "soundsmodutil:quack"
-      ]
+      ],
+      "stream": "false"
     },
    "gotcha": {
      "category": "player",
      "sounds": [
        "soundsmodutil:gotcha"
-    ]
-  }
+    ],
+     "stream": "false"
+   }
 }
