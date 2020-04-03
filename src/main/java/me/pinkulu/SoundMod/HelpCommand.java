@@ -42,14 +42,14 @@ public class HelpCommand extends CommandBase {
                         "&" + (SoundPlayer.bruhDeath ? "a" : "c") +"bruh"+
                         "\n &3Commands: " +
                         "\n &b/killsound + name or /deathsound + name" +
-                        "\n &b+/nicksounds + <name/reset> which is for mvp++'s if you want this mod to work in bedwars" +
+                        "\n &b/nicksounds + <name/reset> which is for mvp++'s if you want this mod to work in bedwars" +
                         "\n &bexample: /nicksounds pinkulu(set this as your nicked nick)" +
                         "\n &bor /nicksounds reset(do this if you change it back to your normal name)" +
                         "\n &4More coming soon" +
                         "\n &5Mod made by:" +
                         "\n &dPinkulu" ))));
         //what shows in chat and than the hoverable text is registered
-        IChatComponent text = new ChatComponentText(Util.replace( "&e " + Sounds.NAME +" " + Sounds.VERSION + "&7(hoverable text)")).setChatStyle(style);
+        IChatComponent text = new ChatComponentText(Util.replace( "&e " + Sounds.NAME +" " + Sounds.VERSION + " &7(hoverable text)")).setChatStyle(style);
         //ads to chat
         player.addChatMessage(text);
     }

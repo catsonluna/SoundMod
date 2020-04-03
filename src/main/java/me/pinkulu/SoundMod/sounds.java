@@ -19,7 +19,7 @@ import java.io.IOException;
 public class Sounds {
 
     static final String MODID = "soundsmod";
-    public static final String VERSION = "1.0";
+    public static final String VERSION = "1.1";
     public static final String NAME = "SoundsMod";
 
     private SoundPlayer soundplayer = new SoundPlayer();

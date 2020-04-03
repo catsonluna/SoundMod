@@ -65,8 +65,13 @@ public class DeathToggleCommand extends CommandBase {
                 SoundPlayer.oofDeath = true;
                 Minecraft.getMinecraft().thePlayer.playSound(SoundPlayer.oof.toString(), 3.0f, 1.0f);
                 Sounds.saveConfig();
-
-
+            }else if (args[0].equals("disable")) {
+                Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(Util.replace("&4disabled All sounds for Death")));
+                SoundPlayer.boomerDeath = false;
+                SoundPlayer.quackDeath = false;
+                SoundPlayer.bruhDeath = false;
+                SoundPlayer.oofDeath = false;
+                Sounds.saveConfig();
             }
         }
         @Override

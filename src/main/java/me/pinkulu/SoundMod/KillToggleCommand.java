@@ -80,6 +80,15 @@ public class KillToggleCommand extends CommandBase {
             Minecraft.getMinecraft().thePlayer.playSound(SoundPlayer.oof.toString(), 3.0f, 1.0f);
                 Sounds.saveConfig();
         }
+        else if (args[0].equals("disable")) {
+            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(Util.replace("&4Disabled all sounds for Kill")));
+            SoundPlayer.boomerKill = false;
+            SoundPlayer.bruhKill = false;
+            SoundPlayer.quackKill= false;
+            SoundPlayer.gotchaKill = false;
+            SoundPlayer.oofKill = false;
+            Sounds.saveConfig();
+        }
     }
 
     @Override
