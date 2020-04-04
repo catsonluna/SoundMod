@@ -1,10 +1,9 @@
 package me.pinkulu.SoundMod;
 
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import me.pinkulu.SoundMod.Commands.*;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -80,6 +79,10 @@ public class Sounds {
         SoundPlayer.quackDeath = json.get("quackDeath").getAsBoolean();
 
         SoundPlayer.gotchaKill = json.get("gotchaKill").getAsBoolean();
+
+        SoundPlayer.knockbackHit = json.get("knockbackHit").getAsBoolean();
+
+        SoundPlayer.skeppyjspDeath = json.get("skeppyjspDeath").getAsBoolean();
     }
     public static void writeJson(JsonWriter writer) throws IOException {
         writer.setIndent(" "); // this enabled pretty print
@@ -100,6 +103,10 @@ public class Sounds {
         writer.name("quackDeath").value(SoundPlayer.quackDeath);
 
         writer.name("gotchaKill").value(SoundPlayer.gotchaKill);
+
+        writer.name("knockbackHit").value(SoundPlayer.knockbackHit);
+
+        writer.name("skeppyjspDeath").value(SoundPlayer.skeppyjspDeath);
 
         writer.endObject();
         writer.endObject();

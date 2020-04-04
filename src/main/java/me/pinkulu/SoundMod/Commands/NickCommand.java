@@ -1,5 +1,6 @@
-package me.pinkulu.SoundMod;
+package me.pinkulu.SoundMod.Commands;
 
+import me.pinkulu.SoundMod.SoundPlayer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;

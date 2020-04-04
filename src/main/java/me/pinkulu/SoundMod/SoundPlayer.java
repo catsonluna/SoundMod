@@ -1,6 +1,8 @@
 package me.pinkulu.SoundMod;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IChatComponent;
@@ -11,18 +13,27 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import java.io.*;
 import java.util.ArrayList;
 
+
+
 public class SoundPlayer {
 
     public static boolean boomerDeath;
     public static boolean oofDeath;
     public static boolean bruhDeath;
     public static boolean quackDeath;
+    public static boolean skeppyjspDeath;
+    public static boolean okeyDeath;
+    public static boolean noiceDeath;
 
     public static boolean boomerKill;
     public static boolean oofKill;
     public static boolean bruhKill;
     public static boolean quackKill;
     public static boolean gotchaKill;
+    public static boolean okeyKill;
+    public static boolean noiceKill;
+    
+    public static boolean knockbackHit;
 
 
     private String nickData;
@@ -34,6 +45,12 @@ public class SoundPlayer {
     public static ResourceLocation bruh = new ResourceLocation("soundsmodutil", "bruh");
     public static ResourceLocation quack = new ResourceLocation("soundsmodutil", "quack");
     public static ResourceLocation gotcha = new ResourceLocation("soundsmodutil", "gotcha");
+    public static ResourceLocation skeppyjsp = new ResourceLocation("soundsmodutil", "skeppyjsp");
+    public static ResourceLocation okey = new ResourceLocation("soundsmodutil", "okey");
+    public static ResourceLocation noice = new ResourceLocation("soundsmodutil", "noice");
+
+
+
 
     @SubscribeEvent
     public void onChatReceived(ClientChatReceivedEvent e) {
@@ -58,6 +75,13 @@ public class SoundPlayer {
                 Minecraft.getMinecraft().thePlayer.playSound(bruh.toString(), 3.0f, 1.0f);
             } else if (quackDeath) {
                 Minecraft.getMinecraft().thePlayer.playSound(quack.toString(), 4.0f, 1.0f);
+            } else if (skeppyjspDeath){
+                Minecraft.getMinecraft().thePlayer.playSound(skeppyjsp.toString(), 1.0f, 1.0f);
+            }else if (okeyDeath){
+                Minecraft.getMinecraft().thePlayer.playSound(okey.toString(), 2.0f, 1.0f);
+            }
+            else if (noiceDeath){
+                Minecraft.getMinecraft().thePlayer.playSound(noice.toString(), 2.0f, 1.0f);
             }
         }
         if (msg.startsWith("+") && msg.contains("Kill") && msg.contains("coins")) {
@@ -71,18 +95,24 @@ public class SoundPlayer {
                 Minecraft.getMinecraft().thePlayer.playSound(quack.toString(), 4.0f, 1.0f);
             } else if (gotchaKill) {
                 Minecraft.getMinecraft().thePlayer.playSound(gotcha.toString(), 2.5f, 1.0f);
-            }
-            if(msg.equals("You have finished setting up your nickname!")) {
-                Minecraft.getMinecraft().thePlayer.addChatMessage((IChatComponent)new ChatComponentText(EnumChatFormatting.LIGHT_PURPLE + "[SoundsMod] " + EnumChatFormatting.GREEN + "Don't forget to /soundsnick with your current nickname in order for the oof mod to work properly."));
-            }
-
-            if(msg.equals("Your nick has been reset!")) {
-                Minecraft.getMinecraft().thePlayer.addChatMessage((IChatComponent)new ChatComponentText(EnumChatFormatting.LIGHT_PURPLE + "[SoundsMod] " + EnumChatFormatting.GREEN + "Automatically detected /nick reset and reset your SoundsMod nick data."));
-                resetNick();
+            }else if (okeyKill){
+                Minecraft.getMinecraft().thePlayer.playSound(okey.toString(), 2.0f, 1.0f);
+            }else if (noiceKill){
+                Minecraft.getMinecraft().thePlayer.playSound(noice.toString(), 2.0f, 1.0f);
             }
 
         }
+
+
         //everything below is stolen from @refractions:oof mod v1.2 so check it out
+        if(msg.equals("You have finished setting up your nickname!")) {
+            Minecraft.getMinecraft().thePlayer.addChatMessage((IChatComponent)new ChatComponentText(EnumChatFormatting.LIGHT_PURPLE + "[SoundsMod] " + EnumChatFormatting.GREEN + "Don't forget to /soundsnick with your current nickname in order for the oof mod to work properly."));
+        }
+
+        if(msg.equals("Your nick has been reset!")) {
+            Minecraft.getMinecraft().thePlayer.addChatMessage((IChatComponent)new ChatComponentText(EnumChatFormatting.LIGHT_PURPLE + "[SoundsMod] " + EnumChatFormatting.GREEN + "Automatically detected /nick reset and reset your SoundsMod nick data."));
+            resetNick();
+        }
         if(getNick() != "null") {
             for(String m : deathMessages) {
                 nickedFormattedDeathMessages.add(m.replace("PLAYER", getNick()));
@@ -102,6 +132,10 @@ public class SoundPlayer {
                         Minecraft.getMinecraft().thePlayer.playSound(quack.toString(), 4.0f, 1.0f);
                     } else if (gotchaKill) {
                         Minecraft.getMinecraft().thePlayer.playSound(gotcha.toString(), 2.5f, 1.0f);
+                    }else if (okeyKill){
+                        Minecraft.getMinecraft().thePlayer.playSound(okey.toString(), 2.0f, 1.0f);
+                    }else if (noiceKill){
+                        Minecraft.getMinecraft().thePlayer.playSound(noice.toString(), 2.0f, 1.0f);
                     }
                 }
             }
@@ -118,6 +152,10 @@ public class SoundPlayer {
                             Minecraft.getMinecraft().thePlayer.playSound(quack.toString(), 4.0f, 1.0f);
                         } else if (gotchaKill) {
                             Minecraft.getMinecraft().thePlayer.playSound(gotcha.toString(), 3.0f, 1.0f);
+                        }else if (okeyKill){
+                            Minecraft.getMinecraft().thePlayer.playSound(okey.toString(), 2.0f, 1.0f);
+                        }else if (noiceKill){
+                            Minecraft.getMinecraft().thePlayer.playSound(noice.toString(), 2.0f, 1.0f);
                         }
                     }
                 }

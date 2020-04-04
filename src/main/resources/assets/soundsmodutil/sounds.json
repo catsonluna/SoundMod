@@ -33,5 +33,33 @@
        "soundsmodutil:gotcha"
     ],
      "stream": "false"
-   }
+   },
+  "knockback": {
+    "category": "player",
+    "sounds": [
+      "soundsmodutil:knockback"
+    ],
+    "stream": "false"
+  },
+  "skeppyjsp": {
+    "category": "player",
+    "sounds": [
+      "soundsmodutil:skeppyjsp"
+    ],
+    "stream": "false"
+  },
+  "okey": {
+    "category": "player",
+    "sounds": [
+      "soundsmodutil:okey"
+    ],
+    "stream": "false"
+  },
+  "noice": {
+    "category": "player",
+    "sounds": [
+      "soundsmodutil:noice"
+    ],
+    "stream": "false"
+  }
 }

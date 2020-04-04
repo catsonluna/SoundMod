@@ -1,4 +1,4 @@
-package me.pinkulu.SoundMod;
+package me.pinkulu.SoundMod.Commands;
 
 import me.pinkulu.SoundMod.SoundPlayer;
 import me.pinkulu.SoundMod.Sounds;
@@ -34,12 +34,17 @@ public class HelpCommand extends CommandBase {
                         "&" + (SoundPlayer.oofKill ? "a" : "c")+ "oof "+
                         "&" + (SoundPlayer.gotchaKill ? "a" : "c")+"gotcha "+
                         "&" + (SoundPlayer.quackKill ? "a" : "c")+"quack "+
-                        "&" + (SoundPlayer.bruhKill ? "a" : "c") +"bruh"+
+                        "&" + (SoundPlayer.bruhKill ? "a" : "c") +"bruh "+
+                        "&" + (SoundPlayer.okeyKill ? "a" : "c") +"oke "+
+                        "&" + (SoundPlayer.noiceKill ? "a" : "c") +"noice "+
                         "\n &3Available Death sounds: " +
                         "\n &"+(SoundPlayer.boomerDeath ? "a" : "c")+ "boomer " +
                         "&" + (SoundPlayer.oofDeath ? "a" : "c")+ "oof "+
                         "&" + (SoundPlayer.quackDeath ? "a" : "c")+"quack "+
-                        "&" + (SoundPlayer.bruhDeath ? "a" : "c") +"bruh"+
+                        "&" + (SoundPlayer.bruhDeath ? "a" : "c") +"bruh " +
+                        "&" + (SoundPlayer.okeyDeath ? "a" : "c") +"oke "+
+                        "&" + (SoundPlayer.skeppyjspDeath ? "a" : "c") +"skeppyjsp" +
+                        "&" + (SoundPlayer.noiceDeath ? "a" : "c") +"noice "+
                         "\n &3Commands: " +
                         "\n &b/killsound + name or /deathsound + name" +
                         "\n &b/nicksounds + <name/reset> which is for mvp++'s if you want this mod to work in bedwars" +
