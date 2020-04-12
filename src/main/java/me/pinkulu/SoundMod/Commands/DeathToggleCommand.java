@@ -110,7 +110,7 @@ public class DeathToggleCommand extends CommandBase {
                 Minecraft.getMinecraft().thePlayer.playSound(SoundPlayer.okey.toString(), 2f, 1f);
                 Sounds.saveConfig();
             }else if (args[0].equals("noice")) {
-                Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(Util.replace("&2Enabled &4Oke &2for &4Death")));
+                Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(Util.replace("&2Enabled &4Noice &2for &4Death")));
                 SoundPlayer.boomerDeath = false;
                 SoundPlayer.quackDeath = false;
                 SoundPlayer.bruhDeath = false;

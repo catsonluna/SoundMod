@@ -43,7 +43,7 @@ public class HelpCommand extends CommandBase {
                         "&" + (SoundPlayer.quackDeath ? "a" : "c")+"quack "+
                         "&" + (SoundPlayer.bruhDeath ? "a" : "c") +"bruh " +
                         "&" + (SoundPlayer.okeyDeath ? "a" : "c") +"oke "+
-                        "&" + (SoundPlayer.skeppyjspDeath ? "a" : "c") +"skeppyjsp" +
+                        "&" + (SoundPlayer.skeppyjspDeath ? "a" : "c") +"skeppyjsp " +
                         "&" + (SoundPlayer.noiceDeath ? "a" : "c") +"noice "+
                         "\n &3Commands: " +
                         "\n &b/killsound + name or /deathsound + name" +
